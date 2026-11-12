@@ -1,7 +1,7 @@
 # flutter_application_2
 
 A new Flutter project.
- ![Frist_Screen](2E280914-C9F3-43A0-957C-4569C3B7BAD6.png)
+ ![Frist_Screen](Screenshot_1794459740.png)
  ![Sound_Screen](Screenshot_1794459950.png)
  ![thrust_Screen](Screenshot_1794460257.png)
 ## Getting Started
