@@ -1,13 +1,15 @@
 # flutter_application_2
 
 A new Flutter project.
- <p align="center">
-  <img src="Screenshot_1794459740.png" width="300" alt="Frist Screen">
-  <br>
-  <img src="Screenshot_1794459950.png" width="300" alt="Sound Screen">
-  <br>
-  <img src="Screenshot_1794460257.png" width="300" alt="Thrust Screen">
-</p>
+
+## Login Screen
+
+![Login Screen](screenshots/login_screen.png)
+
+## Home Screen
+
+![Home Screen](screenshots/home_screen.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

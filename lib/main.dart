@@ -1,161 +1,311 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyMuslim());
+  runApp(const MyApp());
 }
 
-class MyMuslim extends StatelessWidget {
-  const MyMuslim({super.key});
-
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FristScreen(),
+      home: ScreenLogin(),
     );
   }
 }
 
-class FristScreen extends StatelessWidget {
-  const FristScreen({super.key});
+class ScreenLogin extends StatelessWidget {
+  const ScreenLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const mainColor = Color(0xFF059669);
+    const darkColor = Color(0xFF064E3B);
+    const backgroundColor = Color(0xFFF0FDF4);
+    const borderColor = Color(0xFFD1FAE5);
+
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "My Muslim",
-          style: TextStyle(
-            color: Color.fromARGB(255, 255, 0, 0),
-            fontSize: 32,
-            fontWeight: FontWeight(900),
-          ),
-        ),
-        leading: const Icon(
-          Icons.menu,
-          size: 35,
-          color: Color.fromARGB(255, 255, 0, 0),
-        ),
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-        actions: const [
-          
-          Icon(Icons.shopping_cart, size: 35, color: Colors.red),
-          
-          Icon(Icons.notifications, size: 35, color: Colors.red),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.5),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Welcom Back !",
-                style: TextStyle(
-                  color: Colors.deepPurple,
-                  fontSize: 30,
-                  fontWeight: FontWeight(900),
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                " Listen to the best reciters and touching recitations ",
-                style: TextStyle(
-                  fontWeight: FontWeight(900),
-                  color: const Color.fromARGB(255, 37, 28, 53),
-                ),
-              ),
-              const SizedBox(height: 30),
-              SizedBox(
-                width: 200,
-                height: 50,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-                    foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-                    shape: const StadiumBorder(),
+      backgroundColor: backgroundColor,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+
+                Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color: mainColor,
+                    borderRadius: BorderRadius.circular(22),
+                    boxShadow: [BoxShadow(color: mainColor.withOpacity(0.3))],
                   ),
-                  child: const Text(
-                    "Start Listening ",
+                  child: const Icon(
+                    Icons.view_in_ar_outlined,
+                    color: Colors.white,
+                    size: 42,
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                const Text(
+                  'Welcome Back',
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight(900),
+                    color: darkColor,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Sign in to continue to your account',
+                  style: TextStyle(fontSize: 14, color: Color(0xFF6B7280)),
+                ),
+                const SizedBox(height: 25),
+
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Email',
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight(800),
-                      color: Colors.deepPurple,
+                      fontWeight: FontWeight(900),
+                      color: darkColor,
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              SizedBox(
-                width: 200,
-                height: 50,
-                child: OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(128, 255, 255, 255),
-                    foregroundColor: const Color.fromARGB(255, 103, 58, 183),
-                    shape: const StadiumBorder(),
-                  ),
-                  child: const Text(
-                    "Reciters List",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight(900)),
+                const SizedBox(height: 10),
+                TextField(
+                 decoration: InputDecoration(
+                    hintText: 'amir@example.com',
+                    hintStyle: const TextStyle(
+                      color: Color(0xFF9CA3AF),
+                      fontWeight: FontWeight(600),
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.email_outlined,
+                      color: mainColor,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: const BorderSide(color: borderColor),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: const BorderSide(color: mainColor, width: 2),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 30),
-              Text(
-                "Skip",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight(900),
-                  color: Colors.deepPurple,
+                const SizedBox(height: 20),
+
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Password',
+                    style: TextStyle(
+                      fontWeight: FontWeight(900),
+                      color: darkColor,
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10),
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: '••••••••',
+                    hintStyle: const TextStyle(
+                      color: Color(0xFF9CA3AF),
+                      fontWeight: FontWeight(600),
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.lock_outline,
+                      color: Color(0xFF9CA3AF),
+                    ),
+                    suffixIcon: const Icon(
+                      Icons.visibility_outlined,
+                      color: Color(0xFF9CA3AF),
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: const BorderSide(color: borderColor),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: const BorderSide(color: mainColor, width: 2),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: true,
+                          onChanged: (value) {},
+                          activeColor: mainColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                        const Text(
+                          'Remember me',
+                          style: TextStyle(color: Color(0xFF4B5563)),
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      'Forgot password?',
+                      style: TextStyle(
+                        color: mainColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 15),
+
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: mainColor,
+                      foregroundColor: Colors.white,
+                      elevation: 6,
+                      shadowColor: mainColor.withOpacity(0.4),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight(900),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                const Row(
+                  children: [
+                    Expanded(child: Divider(color: borderColor)),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12),
+                      child: Text(
+                        'or continue with',
+                        style: TextStyle(color: Color(0xFF9CA3AF)),
+                      ),
+                    ),
+                    Expanded(child: Divider(color: borderColor)),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 50,
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          style: OutlinedButton.styleFrom(
+                            backgroundColor: const Color.fromARGB(
+                              255,
+                              26,
+                              70,
+                              51,
+                            ),
+                            foregroundColor: Colors.white,
+                            side: BorderSide.none,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.circle_outlined,
+                                color: Colors.red,
+                                size: 20,
+                              ),
+                              SizedBox(width: 4),
+                              Text(
+                                'Google',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 15),
+                    Expanded(
+                      child: SizedBox(
+                        height: 50,
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          style: OutlinedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 26, 70, 51),
+                            foregroundColor: Colors.white,
+                            side: BorderSide.none,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(Icons.apple, color: Colors.white, size: 20),
+                              SizedBox(width: 8),
+                              Text(
+                                'Apple',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 22),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account? ",
+                      style: TextStyle(color: Color(0xFF6B7280)),
+                    ),
+                    Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: mainColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(
-          255,
-          0,
-          0,
-          0,
-        ).withValues(alpha: 0.5),
-        selectedItemColor: Colors.red,
-        // unselectedItemColor: Colors.red,
-        selectedFontSize: 20,
-        // unselectedFontSize: 20,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              size: 35,
-              color: Color.fromARGB(255, 255, 0, 0),
-            ),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              size: 35,
-              // color: Color.fromARGB(255, 255, 0, 0),
-            ),
-            label: "Search",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              size: 35,
-              // color: Color.fromARGB(255, 255, 0, 0),
-            ),
-            label: "Profile",
-          ),
-        ],
       ),
     );
   }
