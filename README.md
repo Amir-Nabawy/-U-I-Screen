@@ -2,13 +2,6 @@
 
 A new Flutter project.
 
-## Login Screen
-
-![Login Screen](screenshots/login_screen.png)
-
-## Home Screen
-
-![Home Screen](screenshots/home_screen.png)
 
 ## Getting Started
 
